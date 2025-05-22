@@ -1,11 +1,9 @@
-import random
+from fastapi import FastAPI
 
 
-def generate_random_number():
-    return random.randrange(0, 100)
-
-def new_function():
-    return "Eshmat Toshmatov"
+app = FastAPI()
 
 
-print(generate_random_number())
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
